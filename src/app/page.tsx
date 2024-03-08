@@ -1,41 +1,56 @@
 // pages/index.tsx
 import React from 'react';
-import Link from 'next/link';
+import { Button } from '@mui/material';
 
 const Home: React.FC = () => {
   return (
     <div>
-      <h1>Welcome to the Book App!</h1>
-      
       <section>
-        <h2>Admin Section</h2>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/admin/books">
-                <div>Admin Books List</div>
-              </Link>
-            </li>
-            <li>
-              <Link href="/admin/books/new">
-                <div>Create New Book</div>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </section>
-
-      <section>
-        <h2>End User Section</h2>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/books">
-                <div>Books List</div>
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <main className="flex justify-between items-center mt-8">
+          <div className="max-w-lg">
+            <h2 className="text-5xl font-bold leading-tight text-[#8b5f26]">Find your next favorite book here</h2>
+            <p className="mt-4 text-base text-[#8b5f26]">
+            Explore a world of captivating stories and discover new adventures. 
+            Our curated collection of books is sure to delight readers of all tastes and preferences.
+            </p>
+            <Button className="mt-6 bg-[#8b5f26] text-white">See More</Button>
+          </div>
+          <div className="flex space-x-4">
+            <img
+              alt="Book cover"
+              className="rounded-lg shadow-lg"
+              height="240"
+              src="/placeholder.svg"
+              style={{
+                aspectRatio: "160/240",
+                objectFit: "cover",
+              }}
+              width="160"
+            />
+            <img
+              alt="Book cover"
+              className="rounded-lg shadow-lg"
+              height="240"
+              src="/placeholder.svg"
+              style={{
+                aspectRatio: "160/240",
+                objectFit: "cover",
+              }}
+              width="160"
+            />
+            <img
+              alt="Book cover"
+              className="rounded-lg shadow-lg"
+              height="240"
+              src="/placeholder.svg"
+              style={{
+                aspectRatio: "160/240",
+                objectFit: "cover",
+              }}
+              width="160"
+            />
+          </div>
+        </main>
       </section>
     </div>
   );
