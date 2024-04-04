@@ -5,8 +5,26 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Component() {
+
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('/api/books');
+          setData(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+
+      fetchData();
+    }, []);
   return (
     <div className="flex justify-between items-center mt-20">
       <div>
@@ -18,7 +36,7 @@ export default function Component() {
 
             <Link
               className="flex items-center gap-3 rounded-lg px-3 py-2 text-[#8b5f26] hover:text-[#bd1e59]  transition-all"
-              href="/pages/admin/books">
+              href="/admin/books">
               <BookIcon className="text-base font-medium text-[#8b5f26] text-center mx-auto" />
               All Books
             </Link>
@@ -32,21 +50,23 @@ export default function Component() {
 
           </nav>
         </div>
-
+        
         <div className="flex-1 min-h-0 flex flex-col">
           <main className="flex-1 overflow-auto p-4">
             <div className="flex flex-col gap-4 max-w-3xl mx-auto">
               <div className="flex items-center gap-4">
-                <h1 className="text-2xl font-bold text-[#8b5f26]">Add New</h1>
+                <h1 className="text-2xl font-bold text-[#8b5f26]">Edit Book</h1>
               </div>
 
-              <div>
+              <div className="border rounded text-[#8b5f26] shadow-sm">
 
                 <Card className="w-full max-w-3xl">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-[#8b5f26]">Adding...</CardTitle>
-                  <CardDescription>Enter the book's information below.</CardDescription>
-                </CardHeader>
+                  <CardHeader>
+                    <div className="grid gap-1">
+                      <CardTitle className="text-2xl font-bold text-[#8b5f26]">Editing...</CardTitle>
+                      <CardDescription>Make changes to the book details.</CardDescription>
+                    </div>
+                  </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -84,7 +104,7 @@ export default function Component() {
                             width="150"
                           />
                           <div className="flex flex-col space-y-2">
-                            <Input className="max-w-sm" id="placeholder" placeholder="Enter the image URL" />
+                            <Input className="max-w-sm" id="image" placeholder="Enter the image URL" />
                             <Button className="mt-6 bg-[#8b5f26] text-white">Upload new image</Button>
                           </div>
                         </div>
