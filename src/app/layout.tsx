@@ -19,7 +19,7 @@ export default function Layout({ children }: PropsWithChildren) {
           <Link href="/" legacyBehavior>
             <a className="text-base font-medium text-[#8b5f26] hover:text-[#bd1e59]">Home</a>
           </Link>
-          <Link href="/pages/admin/books" legacyBehavior>
+          <Link href="/admin/auth" legacyBehavior>
             <a className="text-base font-medium text-[#8b5f26] hover:text-[#bd1e59]">Admin</a>
           </Link>
         </nav>
@@ -30,11 +30,11 @@ export default function Layout({ children }: PropsWithChildren) {
       <footer className="mt-auto flex justify-center space-x-8 mt-8 border-t border-gray-300 py-4">
         <Text className="text-base font-medium text-[#8b5f26] hover:text-[#bd1e59]" href={""}>
           <Link href="https://github.com/fabio-daros/">
-            © Developed by Fabio Daros
+            © Developed by Fabio Daros  
+            <img src="/github.png" className="linkedinLogo" />
           </Link>
         </Text>
       </footer>
     </div>
-
   )
 }
