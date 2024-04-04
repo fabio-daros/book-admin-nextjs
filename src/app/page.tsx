@@ -13,7 +13,7 @@ const Home: React.FC = () => {
             Explore a world of captivating stories and discover new adventures. 
             Our curated collection of books is sure to delight readers of all tastes and preferences.
             </p>
-            <Link href="/pages/books">
+            <Link href="/books">
                 <Button className="mt-6 bg-[#8b5f26] text-white">See More</Button>
             </Link>
           </div>

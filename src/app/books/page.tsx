@@ -9,7 +9,7 @@ export function Component() {
         <h1 className="text-3xl font-bold text-[#8b5f26]">Discover Your Next Great Read</h1>
       </div>
       <Link className="flex items-center gap-3 rounded-lg px-3 py-2 text-[#8b5f26] hover:text-[#bd1e59]  transition-all"
-              href="/pages/books/bookId">
+              href="/books/bookId">
       <Card>
         <CardContent className="p-4 md:p-6">
           <div className="grid gap-4 items-start">
